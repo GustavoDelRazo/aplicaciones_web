@@ -10,7 +10,9 @@ $def with (producto)
                 </div>
                 <div class="card-body">
                     <form action="actualizar" method="post" enctype="multipart/form-data">
-                        <img src="data:image/png;base64,${producto[5]}" alt="Imagen del producto" style="width: 40%; height: auto;">
+                        <div style="text-align: center;">
+                            <img src="data:image/png;base64,${producto[5]}" alt="Imagen del producto" style="width: 40%; height: auto; display: inline-block;">
+                        </div>
                         <input type="hidden" name="id" value="${producto[0]}">
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre:</label>
