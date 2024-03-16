@@ -37,7 +37,7 @@ $def with (productos, page, total_paginas)
                                         <img src="data:image/png;base64,${producto[5]}" class="card-img-top" alt="Imagen del producto" style="max-height: 200px; object-fit: contain;">
                                     </div>
                                     <div class="col-md-8">
-                                        <h5>${producto[1]}</h5>
+                                        <h5><a href="/ver?id=${producto[0]}">${producto[1]}</a></h5>
                                         <p>${producto[2]}</p>
                                         <p>Precio: ${producto[3]}</p>
                                         <p>Existencias: ${producto[4]}</p>
@@ -49,7 +49,6 @@ $def with (productos, page, total_paginas)
                                                 <a href="borrar?id=${producto[0]}" class="btn btn-outline-danger d-block mb-2">Eliminar</a>
                                             </div>
                                         </div>
-                                        
                                     </div>
                                 </div>
                             </li>
@@ -57,6 +56,7 @@ $def with (productos, page, total_paginas)
                         <li class="list-group-item">No hay productos disponibles.</li>
                 </ul>
             </div>
+            
         </div>
 
         <nav aria-label="Page navigation example">

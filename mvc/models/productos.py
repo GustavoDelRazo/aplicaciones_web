@@ -25,10 +25,10 @@ class Productos:
             # Consulta para obtener los detalles del producto por su ID
             c.execute("SELECT * FROM productos WHERE id=?", (producto_id,))
             # Obtener el resultado
-            producto = c.fetchone()
+            productos = c.fetchone()
             # Cerrar conexión
             conn.close()
-            return producto
+            return productos
         except sqlite3.Error as e:
             print("Error al obtener los detalles del producto:", e)
             return None        

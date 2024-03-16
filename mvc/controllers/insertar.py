@@ -1,5 +1,5 @@
 import web
-import base64  # Agrega esta línea
+import base64  
 from mvc.models.productos import Productos
 
 render = web.template.render('mvc/views/', base='layout')
