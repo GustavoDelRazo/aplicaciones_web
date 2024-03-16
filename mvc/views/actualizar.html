@@ -1,0 +1,58 @@
+$def with (producto)
+
+<!-- Formulario de actualización de producto -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="text-center">Actualizar Producto</h2>
+                </div>
+                <div class="card-body">
+                    <form action="actualizar" method="post" enctype="multipart/form-data">
+                        <img src="data:image/png;base64,${producto[5]}" alt="Imagen del producto" style="width: 40%; height: auto;">
+                        <input type="hidden" name="id" value="${producto[0]}">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" value="${producto[1]}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="descripcion" class="form-label">Descripción:</label>
+                            <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required>${producto[2]}</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="precio" class="form-label">Precio:</label>
+                            <input type="number" class="form-control" id="precio" name="precio" value="${producto[3]}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="existencias" class="form-label">Existencias:</label>
+                            <input type="number" class="form-control" id="existencias" name="existencias" value="${producto[4]}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="imagen" class="form-label">Imagen:</label>
+                            <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block form-control">Actualizar Producto</button>
+                    </form>
+                    <a href="/" class="btn btn-danger btn-block mt-3 form-control">Cancelar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+        var precioInput = document.getElementById('precio');
+        var existenciasInput = document.getElementById('existencias');
+        var precio = parseFloat(precioInput.value);
+        var existencias = parseFloat(existenciasInput.value);
+    
+        if (precio < 0) {
+            alert('Por favor, ingrese un número positivo o cero para el precio.');
+            event.preventDefault();
+        } else if(existencias < 0) {
+            alert('Por favor, ingrese un número positivo o cero para las existencias.');
+            event.preventDefault();
+        }
+    });
+</script>

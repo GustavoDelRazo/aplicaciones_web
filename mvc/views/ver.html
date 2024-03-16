@@ -1,0 +1,29 @@
+$def with (producto)
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="text-center">Detalles del Producto</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="data:image/png;base64,${producto[5]}" alt="Imagen del producto" style="width: 100%; height: auto;">
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Id_Producto:</strong> ${producto[0]}</p>
+                            <p><strong>Nombre:</strong> ${producto[1]}</p>
+                            <p><strong>Descripción:</strong> ${producto[2]}</p>
+                            <p><strong>Precio:</strong> ${producto[3]}</p>
+                            <p><strong>Existencias:</strong> ${producto[4]}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="/" class="btn btn-primary form-control">Volver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

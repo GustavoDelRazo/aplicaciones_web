@@ -1,0 +1,33 @@
+$def with (producto)
+<!-- Confirmar eliminación del producto -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="text-center">Confirmar eliminación</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="data:image/png;base64,${producto[5]}" alt="Imagen del producto" style="width: 100%; height: auto;">
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Nombre:</strong> ${producto[1]}</p>
+                            <p><strong>Descripción:</strong> ${producto[2]}</p>
+                            <p><strong>Precio:</strong> ${producto[3]}</p>
+                            <p><strong>Existencias:</strong> ${producto[4]}</p>
+                            
+                        </div>
+                    </div>
+                    <form action="borrar" method="post">
+                        <br>
+                        <input type="hidden" name="id" value="${producto[0]}">
+                        <button type="submit" class="btn btn-danger btn-block form-control">Sí, eliminar</button>
+                    </form>
+                    <a href="/" class="btn btn-primary btn-block mt-3 form-control">Cancelar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
