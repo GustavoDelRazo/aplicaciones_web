@@ -7,11 +7,10 @@ productos_model = Productos()
 class Ver:
     def GET(self):
         try:
-            # Obtener el ID del producto de la URL
+            
             params = web.input()
             producto_id = int(params.get('id'))
             
-            # Obtener detalles del producto por ID
             producto = productos_model.get_product_by_id(producto_id)
             
             if producto:

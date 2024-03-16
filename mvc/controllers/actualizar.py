@@ -30,21 +30,16 @@ class Actualizar:
             precio = float(data.get('precio'))
             existencias = int(data.get('existencias'))
 
-            # Obtener la imagen del formulario
             imagen = web.input(imagen={})
             imagen_data = imagen.imagen.file.read()
             imagen_base64 = base64.b64encode(imagen_data).decode('utf-8')
 
-            # Verificar si se proporcionó una nueva imagen
             if imagen_data:
-                # Se proporcionó una nueva imagen, actualizamos el producto con la imagen nueva
                 productos_model.update_product_with_image(producto_id, nombre, descripcion, precio, existencias, imagen_base64)
             else:
-                # No se proporcionó una nueva imagen, obtenemos la imagen actual del producto
                 producto = productos_model.get_product_by_id(producto_id)
                 imagen_base64 = producto[5] if producto else None
 
-                # Actualizamos el producto con la imagen actual
                 productos_model.update_product_with_image(producto_id, nombre, descripcion, precio, existencias, imagen_base64)
 
             raise web.seeother('/')
