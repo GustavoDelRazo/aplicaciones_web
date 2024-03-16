@@ -4,7 +4,7 @@ $def with (productos, page, total_paginas)
     <div class="contenido">
         <br>
         <div class="titulo text-center mb-4">
-            <h1>Productos</h1>
+            <h1>Productos Deportivos</h1>
         </div>
         <div class="container">
             <div class="row">
@@ -12,12 +12,12 @@ $def with (productos, page, total_paginas)
                     <form class="d-flex" action="/" method="post">
                         <label class="me-1" for="search">Buscar:</label>
                         <input type="text" class="form-control me-1" id="search" name="search">
-                        <button type="submit" class="btn btn-outline-secondary">Buscar</button>
+                        <button type="submit" class="btn btn-outline-light">Buscar</button>
                     </form>
                 </div>
                 <div class="col-md-6 mb-4"> 
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <a href="insertar" class="btn btn-outline-primary">Insertar</a>
+                        <a href="insertar" class="btn btn-outline-light">Insertar</a>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@ $def with (productos, page, total_paginas)
                                         <img src="data:image/png;base64,${producto[5]}" class="card-img-top" alt="Imagen del producto" style="max-height: 200px; object-fit: contain;">
                                     </div>
                                     <div class="col-md-8">
-                                        <h5><a href="/ver?id=${producto[0]}">${producto[1]}</a></h5>
+                                        <h5><a href="/detalle?id=${producto[0]}">${producto[1]}</a></h5>
                                         <p>${producto[2]}</p>
                                         <p>Precio: ${producto[3]}</p>
                                         <p>Existencias: ${producto[4]}</p>

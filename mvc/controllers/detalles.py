@@ -4,7 +4,7 @@ from mvc.models.productos import Productos
 render = web.template.render('mvc/views/', base='layout')
 productos_model = Productos()
 
-class Ver:
+class Detalle:
     def GET(self):
         try:
             
@@ -14,7 +14,7 @@ class Ver:
             producto = productos_model.get_product_by_id(producto_id)
             
             if producto:
-                return render.ver(producto=producto)
+                return render.detalles(producto=producto)
             else:
                 return "Producto no encontrado."
         except Exception as e:

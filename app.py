@@ -2,7 +2,7 @@ import web
 
 urls = (
     '/', 'mvc.controllers.index.Index',
-    '/ver','mvc.controllers.ver.Ver',
+    '/detalle','mvc.controllers.detalles.Detalle',
     '/borrar','mvc.controllers.borrar.Borrar',
     '/actualizar','mvc.controllers.actualizar.Actualizar',
     '/insertar','mvc.controllers.insertar.Insertar'
