@@ -9,6 +9,6 @@ CREATE TABLE productos (
 
 
 INSERT INTO productos (Nombre, Descripcion, Precio, Existencias)
-VALUES ('Producto 1', 'Descripción del producto 1', 19.99, 50),
-       ('Producto 2', 'Descripción del producto 2', 29.99, 100),
-       ('Producto 3', 'Descripción del producto 3', 39.99, 75);
+VALUES ('Producto 1', 'Descripción 1', 1, 1),
+       ('Producto 2', 'Descripción 2', 2, 2),
+       ('Producto 3', 'Descripción 3', 3, 3);
