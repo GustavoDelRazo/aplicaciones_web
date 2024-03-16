@@ -32,22 +32,23 @@ class Productos:
         except sqlite3.Error as e:
             print("Error al obtener productos paginados:", e)
             return None
-            
-    def get_product_by_id(self, producto_id):
+
+    def get_products_paginated(self, start, limit):
         try:
             # Conexión a la base de datos
             conn = sqlite3.connect('mvc/models/productos.db')
             c = conn.cursor()
-            # Consulta para obtener los detalles del producto por su ID
-            c.execute("SELECT * FROM productos WHERE rowid=?", (producto_id,))
-            # Fetch the row
-            producto = c.fetchone()
+            # Consulta para obtener los productos paginados
+            c.execute("SELECT * FROM productos LIMIT ?, ?", (start, limit))
+            # Obtener los resultados
+            productos = c.fetchall()
             # Cerrar conexión
             conn.close()
-            return producto
+            return productos
         except sqlite3.Error as e:
-            print("Error al obtener los detalles del producto:", e)
+            print("Error al obtener productos paginados:", e)
             return None
+        
 
     def delete_product_by_id(self, producto_id):
         try:
