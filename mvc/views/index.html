@@ -45,7 +45,7 @@ $def with (productos, page, total_paginas)
                                     <img src="data:image/png;base64,${producto[5]}" class="card-img-top" alt="Imagen del producto" style="max-height: 200px; object-fit: contain;">
                                 </div>
                                 <div class="col-md-8">
-                                    <h5><a href="/ver?id=${producto[0]}">${producto[1]}</a></h5>
+                                    <h5><a href="/detalle?id=${producto[0]}">${producto[1]}</a></h5>
                                     <p>${producto[2]}</p>
                                     <p>Precio: ${producto[3]}</p>
                                     <p>Existencias: ${producto[4]}</p>
@@ -69,14 +69,21 @@ $def with (productos, page, total_paginas)
 
     <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center mt-4">
-            $if page > 1:
-                <li class="page-item"><a class="page-link" href="/?page=${page-1}">Anterior</a></li>
-            $for i in range(max(1, page-2), min(total_paginas+1, page+3)):
-                <li class="page-item"><a class="page-link" href="/?page=${i}">${i}</a></li>
-            $if page < total_paginas:
-                <li class="page-item"><a class="page-link" href="/?page=${page+1}">Siguiente</a></li>
+          <li class="page-item">
+            <a class="page-link" href="/?page=${page-1}" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          $for i in range(1, total_paginas+1):
+            <li class="page-item"><a class="page-link" href="/?page=${i}">${i}</a></li>
+          <li class="page-item">
+            <a class="page-link" href="/?page=${page+1}" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
         </ul>
-    </nav>        
+      </nav>
+              
     
 </body>
 </html>
